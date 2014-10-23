@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="administrator">
+	<name>sandmancontrol</name>
+	<version>1.0</version>
+	<creationDate>3/30/2012</creationDate>
+	<author>Sandman Media Inc.</author>
+	<authorEmail>info@sandmanmedia.com</authorEmail>
+	<copyright>Copyright (C) 2014 Sandman Media Inc. All rights reserved.</copyright>
+	<description>TPL_SANDMANCONTROL_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>cpanel.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>login.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>lib</folder>
+	<folder>less</folder>
+	</files>
+	<positions>
+		<position>menu</position>
+		<position>submenu</position>
+		<position>toolbar</position>
+		<position>title</position>
+		<position>status</position>
+		<position>icon</position>
+		<position>cp_shell</position>
+		<position>cpanel</position>
+		<position>bottom</position>
+		<position>footer</position>
+		<position>login</position>
+		<position>debug</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_sandmanctrl.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_sandmanctrl.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				
+				<!-- <field name="templateColor" class="" type="color" default="#13294A"
+				validate="color"
+				label="TPL_SANDMANCONTROL_COLOR_LABEL"
+				description="TPL_SANDMANCONTROL_COLOR_DESC" /> -->
+				
+				<!-- <field name="headerColor" class="" type="color" default="#184A7D"
+				validate="color"
+				label="TPL_SANDMANCONTROL_COLOR_HEADER_LABEL"
+				description="TPL_SANDMANCONTROL_COLOR_HEADER_DESC" /> -->
+
+				<!-- <field name="sidebarColor" class="" type="color" default="#0088CC"
+				validate="color"
+				label="TPL_SANDMANCONTROL_COLOR_SIDEBAR_LABEL"
+				description="TPL_SANDMANCONTROL_COLOR_SIDEBAR_DESC" /> -->
+
+				<field name="logoFile" class="" type="media" default=""
+				label="TPL_SANDMANCONTROL_LOGO_LABEL"
+				description="TPL_SANDMANCONTROL_LOGO_DESC" />
+				
+				
+				<!-- <field name="admin_menus" type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="TPL_SANDMANCONTROL_FIELD_ADMIN_MENUS_LABEL"
+				description="TPL_SANDMANCONTROL_FIELD_ADMIN_MENUS_DESC"
+				filter="integer">
+				<option
+					value="1">JYES</option>
+				<option
+					value="0">JNO</option>
+				</field>
+				
+				<field name="displayHeader" type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="TPL_SANDMANCONTROL_HEADER_LABEL"
+				description="TPL_SANDMANCONTROL_HEADER_DESC"
+				filter="integer">
+				<option
+					value="1">JYES</option>
+				<option
+					value="0">JNO</option>
+				</field>
+
+				<field name="statusFixed" type="list"
+				default="1"
+				label="TPL_SANDMANCONTROL_STATUS_LABEL"
+				description="TPL_SANDMANCONTROL_STATUS_DESC"
+				filter="integer">
+				<option
+					value="1">TPL_SANDMANCONTROL_STATUS_BOTTOM</option>
+				<option
+					value="0">TPL_SANDMANCONTROL_STATUS_TOP</option>
+				</field>
+				
+
+				
+				<field name="stickyToolbar" type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="TPL_SANDMANCONTROL_STICKY_LABEL"
+				description="TPL_SANDMANCONTROL_STICKY_DESC"
+				filter="integer">
+				<option
+					value="1">JYES</option>
+				<option
+					value="0">JNO</option>
+				</field> -->
+				
+				<field name="admin_title_text" class="" type="text" default="Administrator"
+				label="Admin Title"
+				description="" />
+
+				<field name="showhelp" type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="Show Help"
+				description="Show Help Tab"
+				filter="integer">
+				<option
+					value="1">JYES</option>
+				<option
+					value="0">JNO</option>
+				</field>
+
+				<field name="enable_gravatar" type="radio"
+				class="btn-group btn-group-yesno"
+				default="1"
+				label="Enable Gravatar"
+				description="Enable Gravatar"
+				filter="integer">
+				<option
+					value="1">JYES</option>
+				<option
+					value="0">JNO</option>
+				</field>
+
+				<field name="body_text_color" class="" type="color" default="#333"
+				validate="color"
+				label="Body Text"
+				description="" />
+
+				<field name="body_link_color" class="" type="color" default="#4486BA"
+				validate="color"
+				label="Body Link"
+				description="" />
+
+				<field name="header_bg_color" class="" type="color" default="#333"
+				validate="color"
+				label="Header BG"
+				description="" />
+
+				<field name="header_text_color" class="" type="color" default="#CCC"
+				validate="color"
+				label="Header Text"
+				description="" />
+
+				<field name="header_link_color" class="" type="color" default="#FFFFFF"
+				validate="color"
+				label="Header Link"
+				description="" />
+
+				<field name="header_shadow_color" class="" type="color" default="#000000"
+				validate="color"
+				label="Header Shadow"
+				description="" />
+
+				<field name="tab_bg_color" class="" type="color" default="#4D4D4D"
+				validate="color"
+				label="Tab BG"
+				description="" />
+
+				<field name="tab_text_color" class="" type="color" default="#FFFFFF"
+				validate="color"
+				label="Tab Text"
+				description="" />
+
+				<field name="special_bg_color" class="" type="color" default="#C62D2D"
+				validate="color"
+				label="Special BG"
+				description="" />
+
+				<field name="special_text_color" class="" type="color" default="#FFFFFF"
+				validate="color"
+				label="Special Text"
+				description="" />
+
+				<field name="active_bg_color" class="" type="color" default="#4F9BD8"
+				validate="color"
+				label="Active BG"
+				description="" />
+
+				<field name="active_text_color" class="" type="color" default="#FFFFFF"
+				validate="color"
+				label="Active Text"
+				description="" />
+
+				<field name="hover_bg_color" class="" type="color" default="#88B719"
+				validate="color"
+				label="Hover BG"
+				description="" />
+
+				<field name="hover_text_color" class="" type="color" default="#FFFFFF"
+				validate="color"
+				label="Hover Text"
+				description="" />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
