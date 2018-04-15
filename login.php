@@ -4,7 +4,7 @@
  * @subpackage  Templates.sandmancontrol
  *
  * @copyright   Copyright (C) 2014 Sandman Media, Inc. All rights reserved.
- * @license     
+ * @license
  */
 
 defined('_JEXEC') or die;
@@ -18,18 +18,24 @@ JHtml::_('bootstrap.framework');
 JHtml::_('bootstrap.tooltip');
 
 // Add Stylesheets
-$doc->addStyleSheet('templates/' .$this->template. '/css/template.css');
+$doc->addStyleSheetVersion('templates/' . $this->template . '/css/template' . ($this->direction == 'rtl' ? '-rtl' : '') . '.css');
 $doc->addStyleSheet('templates/' .$this->template. '/css/login.css');
 
 // Load optional RTL Bootstrap CSS
-// JHtml::_('bootstrap.loadCss', false, $this->direction);
+JHtml::_('bootstrap.loadCss', false, $this->direction);
 
 // Load specific language related CSS
-// $file = 'language/' . $lang->getTag() . '/' . $lang->getTag() . '.css';
-// if (is_file($file))
-// {
-// 	$doc->addStyleSheet($file);
-// }
+$file = 'language/' . $lang->getTag() . '/' . $lang->getTag() . '.css';
+if (is_file($file)) :
+	$doc->addStyleSheet($file);
+endif;
+
+//Load user custom css file if it exists
+$file = 'templates/' . $$this->template . '/css/custom.css';
+if (is_file($file))
+{
+	$doc->addStyleSheetVersion($file);
+}
 
 // Detecting Active Variables
 $option   = $app->input->getCmd('option', '');
@@ -111,8 +117,8 @@ else
 	<![endif]-->
 
 	<style>
-		#sc-login #sc-header { 
-			background-color: <?php echo $header_bg_color; ?>; 
+		#sc-login #sc-header {
+			background-color: <?php echo $header_bg_color; ?>;
 			border-bottom: 10px solid <?php echo $active_bg_color; ?>;
 		}
 

@@ -22,15 +22,6 @@ $input = $app->input;
 $user = JFactory::getUser();
 
 $session = JFactory::getSession();
-// echo $session->get( 'user' );
-// print_r($session); die();
-
-// echo $session->getExpire();
-
-
-// print_r($app);
-
-// print_r($user);
 
 // Add JavaScript Frameworks
 JHtml::_('bootstrap.framework');
@@ -42,7 +33,13 @@ $doc->addStyleSheetVersion('templates/' . $this->template . '/css/main.css');
 
 // Load specific language related CSS
 $file = 'language/' . $lang->getTag() . '/' . $lang->getTag() . '.css';
+if (is_file($file))
+{
+	$doc->addStyleSheetVersion($file);
+}
 
+//Load user custom css file if it exists
+$file = 'templates/' . $$this->template . '/css/custom.css';
 if (is_file($file))
 {
 	$doc->addStyleSheetVersion($file);
@@ -85,8 +82,6 @@ $displayHeader = $this->params->get('displayHeader', '1');
 $statusFixed = $this->params->get('statusFixed', '1');
 $stickyToolbar = $this->params->get('stickyToolbar', '1');
 
-// $header_bg_color = $this->params->get('stickyToolbar', '1');
-
 $body_text_color 	= $this->params->get('body_text_color');
 $admin_title_text 	= $this->params->get('admin_title_text');
 $header_text_color 	= $this->params->get('header_text_color');
@@ -103,9 +98,6 @@ $hover_text_color 	= $this->params->get('hover_text_color');
 $special_bg_color 	= $this->params->get('special_bg_color');
 $special_text_color = $this->params->get('special_text_color');
 $showhelp = $this->params->get('showhelp');
-
-// print_r($this);
-
 
 ?>
 <!DOCTYPE html>
@@ -152,20 +144,20 @@ $showhelp = $this->params->get('showhelp');
 	<![endif]-->
 
 	<style>
-		#sc-header { 
-			background-color: <?php echo $header_bg_color; ?>; 
+		#sc-header {
+			background-color: <?php echo $header_bg_color; ?>;
 			border-bottom: 10px solid <?php echo $active_bg_color; ?>;
 		}
 		.nav-tabs > li > a:hover, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover { background-color: <?php echo $active_bg_color; ?>; }
 		.nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus { background-color: <?php echo $active_bg_color; ?>; }
 		.nav-tabs > li > a:hover, .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover { color: <?php echo $active_text_color; ?>; }
 		a { color: <?php echo $body_link_color; ?>; }
-		
+
 		#menu > li, .nav-tabs > li > a { background-color: <?php echo $tab_bg_color; ?>; }
 		#menu > li a, .nav-tabs > li > a { color: <?php echo $tab_text_color; ?>; }
 
-		#menu > li:hover > a, .sc-status > li:hover > a, #menu .dropdown-menu li > a:hover, 
-		#menu .dropdown-submenu:hover > a, .sc-status .dropdown-menu li > a:hover { 
+		#menu > li:hover > a, .sc-status > li:hover > a, #menu .dropdown-menu li > a:hover,
+		#menu .dropdown-submenu:hover > a, .sc-status .dropdown-menu li > a:hover {
 			background-color: <?php echo $hover_bg_color; ?>;
 			color: <?php echo $hover_text_color; ?>;
 		}
@@ -190,7 +182,7 @@ $showhelp = $this->params->get('showhelp');
 		/*
 		<?php// if($showhelp): ?> #menu > li:last-child { display: none; } <?php //endif; ?>
 		*/
-		
+
 	</style>
 </head>
 
@@ -203,11 +195,11 @@ $showhelp = $this->params->get('showhelp');
 		<div style="display: inline-block;">
 			<img src="<?php echo $logo; ?>" class="sc-logo" />
 			<h1 class="admin-title" style="margin-bottom: 18px;"><?php echo $admin_title_text; ?></h1>
-		
-		<div class="clear"></div>
-		
 
-		
+		<div class="clear"></div>
+
+
+
 
 		<div id="sc-nav">
 			<?php $sctrl->displayMenu(); ?>
@@ -219,7 +211,7 @@ $showhelp = $this->params->get('showhelp');
 			<?php $sctrl->displayStatus(); ?>
  			<!-- <ul>
 				<li><a href="#">View Site</a></li>
-				
+
 			</ul> -->
 			<?php $sctrl->displayUserInfo(); ?>
 			<div class="clear"></div>
