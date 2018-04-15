@@ -41,18 +41,18 @@
 		<position>debug</position>
 	</positions>
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.tpl_sandmanctrl.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_sandmanctrl.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_sandmancontrol.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_sandmancontrol.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
-				
+
 				<!-- <field name="templateColor" class="" type="color" default="#13294A"
 				validate="color"
 				label="TPL_SANDMANCONTROL_COLOR_LABEL"
 				description="TPL_SANDMANCONTROL_COLOR_DESC" /> -->
-				
+
 				<!-- <field name="headerColor" class="" type="color" default="#184A7D"
 				validate="color"
 				label="TPL_SANDMANCONTROL_COLOR_HEADER_LABEL"
@@ -66,8 +66,8 @@
 				<field name="logoFile" class="" type="media" default=""
 				label="TPL_SANDMANCONTROL_LOGO_LABEL"
 				description="TPL_SANDMANCONTROL_LOGO_DESC" />
-				
-				
+
+
 				<!-- <field name="admin_menus" type="radio"
 				class="btn-group btn-group-yesno"
 				default="1"
@@ -79,7 +79,7 @@
 				<option
 					value="0">JNO</option>
 				</field>
-				
+
 				<field name="displayHeader" type="radio"
 				class="btn-group btn-group-yesno"
 				default="1"
@@ -102,9 +102,9 @@
 				<option
 					value="0">TPL_SANDMANCONTROL_STATUS_TOP</option>
 				</field>
-				
 
-				
+
+
 				<field name="stickyToolbar" type="radio"
 				class="btn-group btn-group-yesno"
 				default="1"
@@ -116,7 +116,7 @@
 				<option
 					value="0">JNO</option>
 				</field> -->
-				
+
 				<field name="admin_title_text" class="" type="text" default="Administrator"
 				label="Admin Title"
 				description="" />
